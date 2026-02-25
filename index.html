@@ -315,7 +315,7 @@ function generarNumeroRemision(){
     inputRemision.value = numeroFormateado;
 }
 
-generarNumeroRemision();
+//generarNumeroRemision();
 
 function calcular(){
 
@@ -411,6 +411,8 @@ async function exportarPDF(){
 
     doc.addImage(imgData,"PNG",0,0,width,height);
     doc.save("Remision.pdf");
+
+    generarNumeroRemision();
 }
 </script>
 <p>v1.6.0</p>
