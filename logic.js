@@ -128,4 +128,13 @@ async function exportarPDF() {
     doc.addImage(imgData, "PNG", x, y, finalWidth, finalHeight);
     doc.save(`Remision_${numeroRemisionActual}.pdf`);
     generarNumeroRemision();
+    window.location.href = "success.html";
 }
+
+window.addEventListener('load', function() {
+        if (!sessionStorage.getItem('fromPortada')) {
+            window.location.href = 'index.html';
+        } else {
+            sessionStorage.removeItem('fromPortada');
+        }
+    });

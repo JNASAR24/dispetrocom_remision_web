@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Remisión</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="Styles/styles-remission.css">
+</head>
+<body>
+    <div class="documento">
+        <div id="remision">
+            <div class="logo">
+                <!--<img src="Imagenes/logoDispetrocom.png">-->
+            </div>
+            <h2 class="remission-text">REMISIÓN <input id="numeroRemision" class="remission-number"></h2>
+
+            <table>
+                <colgroup>
+                    <col style="width:25%">
+                    <col style="width:25%">
+                    <col style="width:25%">
+                </colgroup>
+                <tr>
+                    <td class="header2">CLIENTE: <input> </td>
+                    <td class="header2">FECHA: <input type="date"></td>
+                    <td class="header2">ORDEN DE COMPRA N°: <input></td>
+                </tr>
+                <tr>
+                    <td class="header2">DIRECCIÓN: <input></td>
+                    <td class="header2">OBRA: <input></td>
+                    <td class="header2">CIUDAD: <input></td>
+                </tr>
+                <tr>
+                    <td class="header2">PERSONA QUE RECIBE: <input></td>
+                    <td class="header2">CARGO: <input></td>
+                    <td class="header2">N° IDENTIFICACIÓN: <input></td>
+                </tr>
+                <tr>
+                    <td class="header2">TELÉFONO PERSONA QUE RECIBE: <input></td>
+                    <td class="header2">HORA DE LLEGADA: <input type="time"></td>
+                    <td class="header2">HORA DE SALIDA: <input type="time"></td>
+                </tr>
+                <tr>
+                    <td class="header2">OPERARIO DE VEHÍCULO: <input></td>
+                    <td class="header2">PLACA DEL VEHÍCULO: <input></td>
+                    <td class="header2">CANTIDAD DE SELLOS: <input></td>
+                </tr>
+            </table>
+
+            <table>
+                <colgroup>
+                    <col style="width:70%">
+                    <col style="width:20%">
+                    <col style="width:10%">
+                </colgroup>
+                <tr class="header">
+                    <th>DESCRIPCIÓN DEL EQUIPO</th>
+                    <th>TIPO DE COMBUSTIBLE</th>
+                    <th>CANTIDAD GALONES</th>
+                </tr>
+                <!-- Filas -->
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <tr>
+                    <td><input></td>
+                    <td>
+                        <select class="tipo">
+                            <option value=""></option>
+                            <option value="BIODIESEL">BIODIESEL</option>
+                            <option value="GASOLINA CORRIENTE">GASOLINA CORRIENTE</option>
+                            <option value="GASOLINA EXTRA">GASOLINA EXTRA</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="galones" value="0"></td>
+                </tr>
+                <!-- Totales -->
+                <tr>
+                    <td colspan="2" class="total">BIODIESEL TOTAL GALONES:</td>
+                    <td><input id="totalBiodiesel" class="total-input" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="total">GASOLINA CORRIENTE TOTAL GALONES:</td>
+                    <td><input id="totalCorriente" class="total-input" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="total">GASOLINA EXTRA TOTAL GALONES:</td>
+                    <td><input id="totalExtra" class="total-input" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="total">GRAN TOTAL GALONES:</td>
+                    <td><input id="granTotal" class="total-input" readonly></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr class="header">
+                    <td colspan="4">PROCEDIMIENTO DE SATISFACCIÓN DE ENTREGA DE BIOCOMBUSTIBLES (CANTIDAD Y CALIDAD)</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="center">(Espacio para ser diligenciado única y exclusivamente por el cliente)</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="center">SI SU RESPUESTA ES NO; N/A JUSTIFIQUE EN EL CAMPO DE OBSERVACIONES</td>
+                </tr>
+                <tr class="header">
+                    <td>ENCUESTA DE CALIDAD Y CANTIDAD</td>
+                    <td>SI</td>
+                    <td>NO</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>1. ¿Se realizó la medida inicial del producto?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>2. ¿Se realizó la prueba de calidad?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>3. ¿Se realizó la prueba de agua?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>4. ¿La muestra presentaba brillantes y transparencia?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>5. ¿El conductor llevó guía de transporte?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>6. ¿Los sellos se encuentran en perfecto estado?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>7. ¿La cantidad solicitada se ajusta al requerimiento?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr><td class="header">OBSERVACIONES</td></tr>
+                <tr><td><input style="height:50px"></td></tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td class="nota">
+                        Nota: Señor cliente tenga en cuenta que la aplicación de este procedimiento es de estricto cumplimiento para todas las entregas, luego, firmado el presente documento, Dispetrocom no se hace responsable por alteraciones presentadas posteriormente en la calidad de los productos entregados y/o diferencias en los inventarios del cliente.
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td class="header">NOMBRE:</td><td><input></td>
+                    <td class="header">CÉDULA:</td><td><input></td>
+                </tr>
+            </table>
+
+            <h3>FIRMA Y SELLO AUTORIZADO</h3>
+            <canvas id="firma" width="400" height="150"></canvas>
+        </div>
+    </div>
+
+    <div class="acciones">
+        <button onclick="limpiar()">Limpiar Firma</button>
+        <button onclick="exportarPDF()">Exportar PDF</button>
+    </div>
+
+    
+    <p class="version">v1.7.2.1</p>
+
+    <script src="logic.js"></script>
+</body>
+</html>
