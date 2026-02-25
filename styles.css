@@ -1,8 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background: white;
-}
+    background: linear-gradient(135deg, rgb(141, 186, 166), rgb(100, 145, 200));
+    margin-bottom: 10px;
+    min-height: 100vh; 
+
 
 .documento {
     width: 800px;
@@ -16,21 +18,25 @@ body {
     text-align: center;
     margin-bottom: 10px;
     border: 2px solid black;
+    background: white;
 }
 
 .logo img {
     width: 260px;
+    background: white;
 }
 
 h2 {
     text-align: center;
     margin-bottom: 10px;
+    background: white;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 6px;
+    background: white;
 }
 
 td, th {
