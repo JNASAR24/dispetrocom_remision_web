@@ -6,12 +6,24 @@ const totalCorriente = document.getElementById("totalCorriente");
 const totalExtra = document.getElementById("totalExtra");
 const granTotal = document.getElementById("granTotal");
 
-/* ================= CONTADOR REMISION ================= */
+/* ================= CONTADOR REMISIÓN ================= */
 
 const inputRemision = document.getElementById("numeroRemision");
 let numeroRemisionActual = "";
 
-function generarNumeroRemision() {
+function obtenerNumeroRemision() {
+    let contador = localStorage.getItem("contadorRemision");
+    if (!contador) {
+        contador = 1;
+    } else {
+        contador = Number(contador);
+    }
+    const numeroFormateado = "#" + String(contador).padStart(7, "0");
+    inputRemision.value = numeroFormateado;
+    numeroRemisionActual = numeroFormateado;
+}
+
+function incrementarContadorRemision() {
     let contador = localStorage.getItem("contadorRemision");
     if (!contador) {
         contador = 1;
@@ -19,15 +31,13 @@ function generarNumeroRemision() {
         contador = Number(contador) + 1;
     }
     localStorage.setItem("contadorRemision", contador);
-    const numeroFormateado = "#" + String(contador).padStart(7, "0");
-    inputRemision.value = numeroFormateado;
-    numeroRemisionActual = numeroFormateado;
 }
 
 function generarNumeroRemisionR() {
     localStorage.removeItem("contadorRemision");
     alert("Contador de remisión reiniciado");
     numeroRemisionActual = "";
+    obtenerNumeroRemision();
 }
 
 function calcular() {
@@ -53,7 +63,7 @@ function calcular() {
 galones.forEach(g => g.addEventListener("input", calcular));
 tipos.forEach(t => t.addEventListener("change", calcular));
 
-generarNumeroRemision();
+obtenerNumeroRemision();
 calcular();
 
 /* FIRMA */
@@ -127,12 +137,6 @@ async function exportarPDF() {
     const y = 0;
     doc.addImage(imgData, "PNG", x, y, finalWidth, finalHeight);
     doc.save(`Remision_${numeroRemisionActual}.pdf`);
+    incrementarContadorRemision();
     window.location.href = "success.html";
 }
-
-window.addEventListener('load', function() {
-        if (!sessionStorage.getItem('fromPortada')) {
-        } else {
-            sessionStorage.removeItem('fromPortada');
-        }
-    });
