@@ -9,9 +9,10 @@ const granTotal = document.getElementById("granTotal");
 /* ================= CONTADOR REMISION ================= */
 
 const inputRemision = document.getElementById("numeroRemision");
+let numeroRemisionActual = "";
 
 function generarNumeroRemision() {
-    let contador = sessionStorage.getItem("contadorRemision");
+    let contador = localStorage.getItem("contadorRemision");
     if (!contador) {
         contador = 1;
     } else {
@@ -20,11 +21,13 @@ function generarNumeroRemision() {
     localStorage.setItem("contadorRemision", contador);
     const numeroFormateado = "#" + String(contador).padStart(7, "0");
     inputRemision.value = numeroFormateado;
+    numeroRemisionActual = numeroFormateado;
 }
 
 function reiniciarContador() {
-    sessionStorage.removeItem("contadorRemision");
+    localStorage.removeItem("contadorRemision");
     alert("Contador de remisión reiniciado");
+    numeroRemisionActual = "";
 }
 
 function calcular() {
@@ -123,6 +126,6 @@ async function exportarPDF() {
     const x = (pageWidth - finalWidth) / 2;
     const y = 0;
     doc.addImage(imgData, "PNG", x, y, finalWidth, finalHeight);
-    doc.save(`Remision_${inputRemision.value}.pdf`);
+    doc.save(`Remision_${numeroRemisionActual}.pdf`);
     generarNumeroRemision();
 }
