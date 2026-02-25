@@ -12,6 +12,13 @@ body{
     font-family: Arial, sans-serif;
     margin:20px;
 }
+.documento{
+    width: 800px;              /* ancho tipo hoja */
+    margin: 0 auto;            /* centrar */
+    border: 2px solid black;   /* el cuadro */
+    padding: 20px;             /* espacio interno */
+    background: white;         /* fondo limpio */
+}
 .logo{
     text-align:center;
     margin-bottom:10px;
@@ -60,6 +67,10 @@ canvas{
     border:2px solid black;
     touch-action:none;
 }
+.acciones{
+    text-align:center;
+    margin-top:15px;
+}
 button{
     padding:8px 14px;
     margin-top:10px;
@@ -80,6 +91,9 @@ select{
 </head>
 
 <body>
+
+    <div class="documento">
+    <div id="remision">
 
 <div id="remision">
 
@@ -509,8 +523,13 @@ Nota: Señor cliente tenga en cuenta que la aplicación de este procedimiento es
 
 </div>
 
-<button onclick="limpiar()">Limpiar Firma</button>
-<button onclick="exportarPDF()">Exportar PDF</button>
+    </div>
+</div>
+
+<div class="acciones">
+    <button onclick="limpiar()">Limpiar Firma</button>
+    <button onclick="exportarPDF()">Exportar PDF</button>
+</div>
 
 <script>
 const galones = document.querySelectorAll(".galones");
