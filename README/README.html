@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispetrocom Remission Web - Documentación</title>
+    <style>
+        /* Estilos globales */
+        :root {
+            --primary-color: #2E8B57;
+            --secondary-color: #4CAF50;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --light-gray: #e0e0e0;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            text-align: center;
+            color: var(--text-color);
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+        }
+
+        .structure {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+
+        .note {
+            background-color: #e7f5fe;
+            padding: 15px;
+            border-left: 4px solid var(--primary-color);
+            margin: 20px 0;
+        }
+
+        .license {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            color: #666;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para móviles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dispetrocom Remission Web</h1>
+            <p><strong>Digitalización del modelo de remisión físico de Dispetrocom.</strong></p>
+            <p>Este proyecto permite generar, visualizar y descargar remisiones digitales en formato PDF, reemplazando el proceso manual en papel. Está diseñado para ser intuitivo, eficiente y compatible con los flujos de trabajo de la empresa.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Estructura del Proyecto</h2>
+        <div class="structure">
+dispetrocom_remision_web/<br>
+│── Front/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│── index.html          # Portada de bienvenida<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│── remission.html      # Formulario de remisión<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│── success.html        # Página de confirmación de descarga<br>
+│── Logics/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│── logic-index.js      # Lógica para la portada<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│── logic-remission.js   # Lógica para el formulario de remisión<br>
+│── Styles/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│── styles-index.css    # Estilos para la portada<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│── styles-remission.css # Estilos para el formulario de remisión<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│── styles-success.css   # Estilos para la página de éxito<br>
+│── Imagenes/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│── logoDispetrocom.png  # Logo de la empresa<br>
+│── README.md               # Documentación del proyecto
+        </div>
+
+        <h2>Requisitos</h2>
+        <p>Para ejecutar este proyecto localmente, solo necesitas:</p>
+        <ul>
+            <li>Un navegador web moderno (Chrome, Firefox, Edge, etc.).</li>
+            <li>No requiere instalación de dependencias externas, ya que utiliza librerías CDN:
+                <ul>
+                    <li><a href="https://html2canvas.hertzen.com/" target="_blank">html2canvas</a> para capturar el contenido como imagen.</li>
+                    <li><a href="https://parall.ax/products/jspdf" target="_blank">jsPDF</a> para generar el PDF.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Cómo Ejecutar el Proyecto</h2>
+        <ol>
+            <li><strong>Clona el repositorio</strong> (si está en GitHub):
+                <pre><code>git clone https://github.com/JNASAR24/dispetrocom_remision_web.git</code></pre>
+            </li>
+            <li><strong>Abre el archivo <code>index.html</code></strong> en tu navegador:
+                <ul>
+                    <li>Navega a la carpeta <code>Front/</code> y abre <code>index.html</code>.</li>
+                    <li>También puedes usar un servidor local como <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a> en VS Code para evitar problemas con rutas relativas.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Tecnologías Utilizadas</h2>
+        <ul>
+            <li><strong>HTML5</strong>: Estructura del contenido.</li>
+            <li><strong>CSS3</strong>: Estilos y diseño responsivo.</li>
+            <li><strong>JavaScript</strong>: Lógica del formulario, cálculos y generación de PDF.</li>
+            <li><strong>Librerías externas</strong>:
+                <ul>
+                    <li><a href="https://html2canvas.hertzen.com/" target="_blank">html2canvas</a>: Para capturar el contenido HTML como imagen.</li>
+                    <li><a href="https://parall.ax/products/jspdf" target="_blank">jsPDF</a>: Para generar el PDF a partir de la imagen capturada.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Instrucciones de Uso</h2>
+
+        <h3>Portada (<code>index.html</code>)</h3>
+        <ul>
+            <li>Página de bienvenida con el logo de Dispetrocom.</li>
+            <li>Redirige automáticamente al formulario de remisión después de 5 segundos.</li>
+        </ul>
+
+        <h3>Formulario de Remisión (<code>remission.html</code>)</h3>
+        <ul>
+            <li>Completa los campos requeridos (cliente, fecha, tipo de combustible, galones, etc.).</li>
+            <li>Los totales se calculan automáticamente.</li>
+            <li>Haz clic en <strong>"Exportar PDF"</strong> para generar y descargar el documento.</li>
+            <li>Si refrescas la página, serás redirigido a la portada.</li>
+        </ul>
+
+        <h3>Página de Éxito (<code>success.html</code>)</h3>
+        <ul>
+            <li>Confirma que el PDF se generó correctamente.</li>
+            <li>Incluye un botón para volver a la portada.</li>
+        </ul>
+
+        <h2>Notas Importantes</h2>
+        <div class="note">
+            <ul>
+                <li><strong>Contador de Remisiones:</strong> El sistema lleva un contador automático de remisiones generadas, que se guarda en el <code>localStorage</code> del navegador.</li>
+                <li><strong>Protección contra refrescos:</strong> Si el usuario refresca la página del formulario sin venir de la portada, será redirigido automáticamente a <code>index.html</code>.</li>
+                <li><strong>Diseño responsivo:</strong> Optimizado para visualización en computadoras (no está diseñado para móviles en esta versión).</li>
+            </ul>
+        </div>
+
+        <h2>Autor</h2>
+        <p><strong>Jhonatan Osorio</strong></p>
+        <ul>
+            <li>Contacto: <a href="mailto:tu-correo@example.com">tu-correo@example.com</a></li>
+            <li>Portafolio o LinkedIn: [Enlace opcional]</li>
+        </ul>
+
+        <div class="license">
+            <h2>Licencia</h2>
+            <p>Este proyecto es de uso interno para <strong>Dispetrocom</strong> y no está sujeto a licencia abierta.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Documentación generada para el proyecto <strong>Dispetrocom Remission Web</strong> | © 2023</p>
+    </footer>
+</body>
+</html>

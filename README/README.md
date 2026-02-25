@@ -82,5 +82,5 @@ Contador de Remisiones: El sistema lleva un contador automático de remisiones g
 Protección contra refrescos: Si el usuario refresca la página del formulario sin venir de la portada, será redirigido automáticamente a index.html.
 Diseño responsivo: Optimizado para visualización en computadoras.
 
-📜 Licencia
+## Licencia
 Este proyecto es de uso interno para Dispetrocom y no está sujeto a licencia abierta.
