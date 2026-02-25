@@ -105,7 +105,6 @@ select {
 }
 .remission-number {
     color: #fa1414;
-    font-weight: bold;
     font-size: 20px;
     text-align: right;
 }
@@ -114,6 +113,7 @@ select {
     font-weight: bold;
     font-size: 20px;
     text-align: right;
+    padding: 2px;
 }
 .version {
     color: #8c8a8a;
