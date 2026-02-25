@@ -123,6 +123,6 @@ async function exportarPDF() {
     const x = (pageWidth - finalWidth) / 2;
     const y = 0;
     doc.addImage(imgData, "PNG", x, y, finalWidth, finalHeight);
-    doc.save("Remision.pdf");
+    doc.save(`Remision_${inputRemision.value}.pdf`);
     generarNumeroRemision();
 }
