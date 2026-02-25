@@ -1,19 +1,32 @@
+/* Estilos globales */
+html {
+    height: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
     background: linear-gradient(135deg, rgb(179, 255, 250), rgb(140, 239, 175));
-    margin-bottom: 10px;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
+/* Animación */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Documento principal */
 .documento {
     width: 800px;
     margin: 0 auto;
     border: 2px solid black;
     padding: 20px;
     background: white;
+    animation: fadeIn 2.0s ease-in-out;
 }
 
+/* Logo */
 .logo {
     text-align: center;
     margin-bottom: 10px;
@@ -26,12 +39,29 @@ body {
     background: white;
 }
 
-h2 {
-    text-align: center;
+/* Título de remisión */
+.remission-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
     margin-bottom: 10px;
     background: white;
 }
 
+.remission-number {
+    color: #fa1414;
+    font-size: 20px;
+    text-align: center;
+    width: 90px;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+/* Tablas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -57,16 +87,13 @@ input {
     font-weight: bold;
     text-align: center;
 }
+
 .header2 {
     background: #d9ead3;
     font-weight: bold;
     text-align: left;
 }
-.header3 {
-    background: #ffffff;
-    font-weight: bold;
-    text-align: left;
-}
+
 .center {
     text-align: center;
 }
@@ -76,6 +103,11 @@ input {
     text-align: right;
 }
 
+.total-input {
+    color: #ff3333;
+    font-weight: bold;
+}
+
 .nota {
     font-size: 12px;
     padding: 10px;
@@ -83,6 +115,7 @@ input {
     text-align: center;
 }
 
+/* Canvas y acciones */
 canvas {
     border: 2px solid black;
     touch-action: none;
@@ -97,37 +130,28 @@ button {
     padding: 8px 14px;
     margin-top: 10px;
     cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.footer td {
-    font-size: 11px;
-    text-align: center;
-    padding: 6px;
+button:hover {
+    background-color: #45a049;
 }
 
+/* Versión */
+.version {
+    color: #8c8a8a;
+    text-align: left;
+}
+
+/* Select */
 select {
     width: 100%;
     border: none;
     font-size: 13px;
     background: transparent;
-}
-.total-input {
-    color: #ff3333;
-    font-weight: bold;
-}
-.remission-number {
-    color: #fa1414;
-    font-size: 20px;
-    text-align: right;
-}
-.remission-text {
-    color: #000000;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: right;
-    padding: 2px;
-}
-.version {
-    color: #8c8a8a;
-    text-align: left;
 }
