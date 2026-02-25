@@ -80,8 +80,7 @@ Incluye un botón para volver a la portada.
 
 Contador de Remisiones: El sistema lleva un contador automático de remisiones generadas, que se guarda en el localStorage del navegador.
 Protección contra refrescos: Si el usuario refresca la página del formulario sin venir de la portada, será redirigido automáticamente a index.html.
-Diseño responsivo: Optimizado para visualización en computadoras (no está diseñado para móviles en esta versión).
-
+Diseño responsivo: Optimizado para visualización en computadoras.
 
 📜 Licencia
 Este proyecto es de uso interno para Dispetrocom y no está sujeto a licencia abierta.
