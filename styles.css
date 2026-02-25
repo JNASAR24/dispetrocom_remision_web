@@ -115,3 +115,7 @@ select {
     font-size: 20px;
     text-align: right;
 }
+.version {
+    color: #8c8a8a;
+    text-align: left;
+}
