@@ -11,7 +11,7 @@ const granTotal = document.getElementById("granTotal");
 const inputRemision = document.getElementById("numeroRemision");
 
 function generarNumeroRemision() {
-    let contador = localStorage.getItem("contadorRemision");
+    let contador = sessionStorage.getItem("contadorRemision");
     if (!contador) {
         contador = 1;
     } else {
@@ -23,7 +23,7 @@ function generarNumeroRemision() {
 }
 
 function reiniciarContador() {
-    localStorage.removeItem("contadorRemision");
+    sessionStorage.removeItem("contadorRemision");
     alert("Contador de remisión reiniciado");
 }
 
