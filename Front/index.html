@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Portada - Remisión</title>
-    <link rel="stylesheet" href="Styles/styles-index.css">
+    <link rel="stylesheet" href="../Styles/styles-index.css">
     <style>
         
     </style>
@@ -11,7 +11,7 @@
 <body class="body-index">
     <div class="portada-content-index">
         <div class="logo-index">
-            <img src="Imagenes/logoDispetrocom.png" alt="Logo Dispetrocom">
+            <img src="../Imagenes/logoDispetrocom.png" alt="Logo Dispetrocom">
         </div>
         <h1 class="hi-index">Sistema de Remisiones</h1>
         <p class="p-index">Bienvenido al sistema de remisiones de Dispetrocom.</p>
@@ -20,11 +20,6 @@
         </div>
     </div>
 
-    <script>
-        setTimeout(function() {
-            sessionStorage.setItem('fromPortada', 'true');
-            window.location.href = "remission.html";
-        }, 5000);
-    </script>
+    <script src="../Logics/logic-index.js"></script>
 </body>
 </html>

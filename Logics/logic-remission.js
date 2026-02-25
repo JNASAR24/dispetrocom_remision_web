@@ -24,7 +24,7 @@ function generarNumeroRemision() {
     numeroRemisionActual = numeroFormateado;
 }
 
-function reiniciarContador() {
+function generarNumeroRemisionR() {
     localStorage.removeItem("contadorRemision");
     alert("Contador de remisión reiniciado");
     numeroRemisionActual = "";
@@ -127,7 +127,7 @@ async function exportarPDF() {
     const y = 0;
     doc.addImage(imgData, "PNG", x, y, finalWidth, finalHeight);
     doc.save(`Remision_${numeroRemisionActual}.pdf`);
-    generarNumeroRemision();
+    //generarNumeroRemision();
     window.location.href = "success.html";
 }
 
