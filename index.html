@@ -311,11 +311,16 @@ function generarNumeroRemision(){
 
     localStorage.setItem("contadorRemision", contador);
 
-    const numeroFormateado = "#" + String(contador).padStart(4, "0");
+    const numeroFormateado = "#" + String(contador).padStart(7, "0");
     inputRemision.value = numeroFormateado;
 }
 
-//generarNumeroRemision();
+generarNumeroRemision();
+
+function reiniciarContador(){
+    localStorage.removeItem("contadorRemision");
+    alert("Contador de remisión reiniciado");
+}
 
 function calcular(){
 
