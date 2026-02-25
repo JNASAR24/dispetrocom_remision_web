@@ -133,7 +133,7 @@ async function exportarPDF() {
 
 window.addEventListener('load', function() {
         if (!sessionStorage.getItem('fromPortada')) {
-            window.location.href = 'index.html';
+            window.location.href = 'welcome.html';
         } else {
             sessionStorage.removeItem('fromPortada');
         }
