@@ -647,19 +647,38 @@ async function exportarPDF(){
 
     const elemento = document.getElementById("remision");
 
-    const canvasImg = await html2canvas(elemento,{
+    const canvasImg = await html2canvas(elemento, {
         scale: 2,
         useCORS: true
     });
 
     const imgData = canvasImg.toDataURL("image/png");
 
-    const doc = new jsPDF("p","mm","a4");
+    const doc = new jsPDF("p", "mm", "a4");
 
-    const width = 210;
-    const height = canvasImg.height * width / canvasImg.width;
+    const pageWidth = 210;
+    const pageHeight = 297;
 
-    doc.addImage(imgData,"PNG",0,0,width,height);
+    // Calcular escala para que TODO quepa en alto
+    const imgWidth = pageWidth;
+    const imgHeight = canvasImg.height * imgWidth / canvasImg.width;
+
+    let finalWidth = imgWidth;
+    let finalHeight = imgHeight;
+
+    // Si la altura excede A4 → escalar hacia abajo
+    if (imgHeight > pageHeight) {
+        const scale = pageHeight / imgHeight;
+        finalWidth = imgWidth * scale;
+        finalHeight = imgHeight * scale;
+    }
+
+    // Centrar en la hoja
+    const x = (pageWidth - finalWidth) / 2;
+    const y = 0;
+
+    doc.addImage(imgData, "PNG", x, y, finalWidth, finalHeight);
+
     doc.save("Remision.pdf");
 
     generarNumeroRemision();
