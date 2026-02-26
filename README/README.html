@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,7 +80,8 @@
             border-radius: 3px;
         }
 
-        ul, ol {
+        ul,
+        ol {
             margin-left: 20px;
         }
 
@@ -139,33 +141,36 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
             <h1>Dispetrocom Remission Web</h1>
             <p><strong>Digitalización del modelo de remisión físico de Dispetrocom.</strong></p>
-            <p>Este proyecto permite generar, visualizar y descargar remisiones digitales en formato PDF, reemplazando el proceso manual en papel. Está diseñado para ser intuitivo, eficiente y compatible con los flujos de trabajo de la empresa.</p>
+            <p>Este proyecto permite generar, visualizar y descargar remisiones digitales en formato PDF, reemplazando
+                el proceso manual en papel. Está diseñado para ser intuitivo, eficiente y compatible con los flujos de
+                trabajo de la empresa.</p>
         </div>
     </header>
 
     <div class="container">
         <h2>Estructura del Proyecto</h2>
         <div class="structure">
-dispetrocom_remision_web/<br>
-│── Front/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;│── index.html          # Portada de bienvenida<br>
-&nbsp;&nbsp;&nbsp;&nbsp;│── remission.html      # Formulario de remisión<br>
-&nbsp;&nbsp;&nbsp;&nbsp;│── success.html        # Página de confirmación de descarga<br>
-│── Logics/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;│── logic-index.js      # Lógica para la portada<br>
-&nbsp;&nbsp;&nbsp;&nbsp;│── logic-remission.js   # Lógica para el formulario de remisión<br>
-│── Styles/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;│── styles-index.css    # Estilos para la portada<br>
-&nbsp;&nbsp;&nbsp;&nbsp;│── styles-remission.css # Estilos para el formulario de remisión<br>
-&nbsp;&nbsp;&nbsp;&nbsp;│── styles-success.css   # Estilos para la página de éxito<br>
-│── Imagenes/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;│── logoDispetrocom.png  # Logo de la empresa<br>
-│── README.md               # Documentación del proyecto
+            dispetrocom_remision_web/<br>
+            │── Front/<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;│── index.html # Portada de bienvenida<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;│── remission.html # Formulario de remisión<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;│── success.html # Página de confirmación de descarga<br>
+            │── Logics/<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;│── logic-index.js # Lógica para la portada<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;│── logic-remission.js # Lógica para el formulario de remisión<br>
+            │── Styles/<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;│── styles-index.css # Estilos para la portada<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;│── styles-remission.css # Estilos para el formulario de remisión<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;│── styles-success.css # Estilos para la página de éxito<br>
+            │── Imagenes/<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;│── logoDispetrocom.png # Logo de la empresa<br>
+            │── README.md # Documentación del proyecto
         </div>
 
         <h2>Requisitos</h2>
@@ -174,7 +179,8 @@ dispetrocom_remision_web/<br>
             <li>Un navegador web moderno (Chrome, Firefox, Edge, etc.).</li>
             <li>No requiere instalación de dependencias externas, ya que utiliza librerías CDN:
                 <ul>
-                    <li><a href="https://html2canvas.hertzen.com/" target="_blank">html2canvas</a> para capturar el contenido como imagen.</li>
+                    <li><a href="https://html2canvas.hertzen.com/" target="_blank">html2canvas</a> para capturar el
+                        contenido como imagen.</li>
                     <li><a href="https://parall.ax/products/jspdf" target="_blank">jsPDF</a> para generar el PDF.</li>
                 </ul>
             </li>
@@ -188,7 +194,9 @@ dispetrocom_remision_web/<br>
             <li><strong>Abre el archivo <code>index.html</code></strong> en tu navegador:
                 <ul>
                     <li>Navega a la carpeta <code>Front/</code> y abre <code>index.html</code>.</li>
-                    <li>También puedes usar un servidor local como <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a> en VS Code para evitar problemas con rutas relativas.</li>
+                    <li>También puedes usar un servidor local como <a
+                            href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
+                            target="_blank">Live Server</a> en VS Code para evitar problemas con rutas relativas.</li>
                 </ul>
             </li>
         </ol>
@@ -200,8 +208,10 @@ dispetrocom_remision_web/<br>
             <li><strong>JavaScript</strong>: Lógica del formulario, cálculos y generación de PDF.</li>
             <li><strong>Librerías externas</strong>:
                 <ul>
-                    <li><a href="https://html2canvas.hertzen.com/" target="_blank">html2canvas</a>: Para capturar el contenido HTML como imagen.</li>
-                    <li><a href="https://parall.ax/products/jspdf" target="_blank">jsPDF</a>: Para generar el PDF a partir de la imagen capturada.</li>
+                    <li><a href="https://html2canvas.hertzen.com/" target="_blank">html2canvas</a>: Para capturar el
+                        contenido HTML como imagen.</li>
+                    <li><a href="https://parall.ax/products/jspdf" target="_blank">jsPDF</a>: Para generar el PDF a
+                        partir de la imagen capturada.</li>
                 </ul>
             </li>
         </ul>
@@ -231,22 +241,35 @@ dispetrocom_remision_web/<br>
         <h2>Notas Importantes</h2>
         <div class="note">
             <ul>
-                <li><strong>Contador de Remisiones:</strong> El sistema lleva un contador automático de remisiones generadas, que se guarda en el <code>localStorage</code> del navegador.</li>
-                <li><strong>Protección contra refrescos:</strong> Si el usuario refresca la página del formulario sin venir de la portada, será redirigido automáticamente a <code>index.html</code>.</li>
-                <li><strong>Diseño responsivo:</strong> Optimizado para visualización en computadoras (no está diseñado para móviles en esta versión).</li>
+                <li><strong>Contador de Remisiones:</strong> El sistema lleva un contador automático de remisiones
+                    generadas, que se guarda en el <code>localStorage</code> del navegador.</li>
+                <li><strong>Protección contra refrescos:</strong> Si el usuario refresca la página del formulario sin
+                    venir de la portada, será redirigido automáticamente a <code>index.html</code>.</li>
+                <li><strong>Diseño responsivo:</strong> Optimizado para visualización en computadoras (no está diseñado
+                    para móviles en esta versión).</li>
             </ul>
         </div>
 
-        <h2>Autor</h2>
-        <p><strong>Jhonatan Osorio</strong></p>
+        <h2>Autoría y Créditos</h2>
+
+        <h3>Equipo de Diseño e Ideas</h3>
+        <p>Este proyecto fue concebido y diseñado gracias al aporte creativo de:</p>
         <ul>
-            <li>Contacto: <a href="mailto:tu-correo@example.com">tu-correo@example.com</a></li>
-            <li>Portafolio o LinkedIn: [Enlace opcional]</li>
+            <li><strong>Edison Sandoval Arcila</strong></li>
+            <li><strong>Karen Natalia González Santana</strong></li>
+            <li><strong>Juan Pablo Muñoz Barreto</strong></li>
+        </ul>
+
+        <h3>Desarrollo Técnico</h3>
+        <p>El desarrollo e implementación técnica de la aplicación fue realizado por:</p>
+        <ul>
+            <li><strong>Jhonatan Stivens Osorio Mora</strong></li>
         </ul>
 
         <div class="license">
             <h2>Licencia</h2>
-            <p>Este proyecto es de uso interno para <strong>Dispetrocom</strong> y no está sujeto a licencia abierta.</p>
+            <p>Este proyecto es de uso interno para <strong>Dispetrocom</strong> y no está sujeto a licencia abierta.
+            </p>
         </div>
     </div>
 
@@ -254,4 +277,5 @@ dispetrocom_remision_web/<br>
         <p>Documentación generada para el proyecto <strong>Dispetrocom Remission Web</strong> | © 2026</p>
     </footer>
 </body>
+
 </html>
